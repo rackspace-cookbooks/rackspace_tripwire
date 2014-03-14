@@ -1,6 +1,0 @@
-name             'rackspace_tripwire_test'
-maintainer       'Rackspace, US Inc.'
-maintainer_email 'rackspace-cookbooks@rackspace.com'
-license          'Apache 2.0'
-description      'Installs/Configures rackspace_tripwire'
-version          '0.1.0'

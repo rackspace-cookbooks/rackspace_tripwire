@@ -9,4 +9,8 @@ describe 'rackspace_tripwire::default' do
   it 'should install the package tripwire' do
     expect(chef_run).to install_package('tripwire')
   end
+
+  context 'rhel has epel' do
+    
+  end
 end
