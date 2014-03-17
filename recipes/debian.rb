@@ -16,11 +16,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# install debconf-utils used for preseeding
-package 'debconf-utils' do
-  action :install
-end
-
 # install package with preseed file disabling key creation
 package 'tripwire' do
   response_file 'tripwire.preseed'

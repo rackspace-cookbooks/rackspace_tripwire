@@ -39,6 +39,16 @@ template '/etc/tripwire/twpol.txt' do
   )
 end
 
-# Drop in config
+# drop in config file
+template '/etc/tripwire/twcfg.txt' do
+  cookbook node['rackspace_tripwire']['twcfg']['templates_book']
+  source 'twcfg.txt.erb'
+  mode 0400
+  owner 'root'
+  group 'root'
+  variables(
+    cookbook_name: cookbook_name
+  )
+end
 
 # Generate keys
