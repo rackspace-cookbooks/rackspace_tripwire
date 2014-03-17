@@ -1,0 +1,9 @@
+tripwire	tripwire/local-passphrase	password
+tripwire	tripwire/site-passphrase	password
+tripwire	tripwire/site-passphrase-again	password
+tripwire	tripwire/local-passphrase-again	password
+tripwire	tripwire/rebuild-config	boolean	false
+tripwire	tripwire/use-localkey	boolean	false
+tripwire	tripwire/use-sitekey	boolean	false
+tripwire	tripwire/upgrade	boolean	false
+tripwire	tripwire/rebuild-policy	boolean	false

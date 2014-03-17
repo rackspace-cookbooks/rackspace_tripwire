@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: rackspace_tripwire
-# Recipe:: default
+# Recipe:: rhel
 #
 # Copyright 2014, Rackspace, US Inc.
 #
@@ -16,29 +16,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# recipe per platform family to handle their specifics
-if platform_family?('rhel')
-  include_recipe 'rackspace_tripwire::rhel'
-elsif platform_family?('debian')
-  include_recipe 'rackspace_tripwire::debian'
-else
-  log 'Unsupported OS detected' do
-    level :info
-  end
+# add the EPEL repo
+rackspace_yum_repository 'epel' do
+  description 'Extra Packages for Enterprise Linux'
+  mirrorlist 'http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch'
+  gpgkey 'http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
+  action :create
 end
 
-# drop in policy file
-template '/etc/tripwire/twpol.txt' do
-  cookbook node['rackspace_tripwire']['twpol']['templates_book']
-  source 'twpol.txt.erb'
-  mode 0400
-  owner 'root'
-  group 'root'
-  variables(
-    cookbook_name: cookbook_name
-  )
+package 'tripwire' do
+  action :install
 end
-
-# Drop in config
-
-# Generate keys
