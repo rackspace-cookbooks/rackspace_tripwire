@@ -14,7 +14,7 @@ describe 'rackspace_tripwire::default' do
     expect(chef_run).to create_template('/etc/tripwire/twpol.txt').with(
       user:   'root',
       group:  'root',
-      mode:   00400
+      mode:   00600
     )
   end
 
@@ -22,7 +22,7 @@ describe 'rackspace_tripwire::default' do
     expect(chef_run).to create_template('/etc/tripwire/twcfg.txt').with(
       user:   'root',
       group:  'root',
-      mode:   00400
+      mode:   00600
     )
   end
 end

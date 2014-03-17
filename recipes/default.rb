@@ -31,7 +31,7 @@ end
 template '/etc/tripwire/twpol.txt' do
   cookbook node['rackspace_tripwire']['twpol']['templates_book']
   source 'twpol.txt.erb'
-  mode 0400
+  mode 0600
   owner 'root'
   group 'root'
   variables(
@@ -43,7 +43,7 @@ end
 template '/etc/tripwire/twcfg.txt' do
   cookbook node['rackspace_tripwire']['twcfg']['templates_book']
   source 'twcfg.txt.erb'
-  mode 0400
+  mode 0600
   owner 'root'
   group 'root'
   variables(
