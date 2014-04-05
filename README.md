@@ -8,7 +8,8 @@ This cookbook is tested and supported on:
 `debian`, `ubuntu` and `rhel/centos 6`
 
 - This cookbook does not support configuring the twpol file. It will use a default one unless you override the template location. i.e.:
-
+- Currently this cookbook only supports installing tripwire. Setting keys and initializing tripwire is out of scope.
+- Ubuntu/Debian are explicitly configured to not set up keys via a apt preseed file
 
 ### cookbooks
 `rackspace_yum` to set up and install `epel` for centos/rhel
@@ -30,10 +31,7 @@ Just include `rackspace_tripwire` in your node's `run_list`:
 
 ```json
 {
-  "name":"my_node",
-  "run_list": [
-    "recipe[rackspace_tripwire]"
-  ]
+  "run_list": ["recipe[rackspace_tripwire]"]
 }
 ```
 
