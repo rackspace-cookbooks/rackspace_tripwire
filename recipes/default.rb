@@ -27,7 +27,7 @@ else
   end
 end
 
-# drop in policy file
+# drop in clear text policy file
 template '/etc/tripwire/twpol.txt' do
   cookbook node['rackspace_tripwire']['twpol']['templates_book']
   source 'twpol.txt.erb'
@@ -39,7 +39,7 @@ template '/etc/tripwire/twpol.txt' do
   )
 end
 
-# drop in config file
+# drop in clear text config file
 template '/etc/tripwire/twcfg.txt' do
   cookbook node['rackspace_tripwire']['twcfg']['templates_book']
   source 'twcfg.txt.erb'
@@ -52,3 +52,4 @@ template '/etc/tripwire/twcfg.txt' do
 end
 
 # Generate keys
+# twadmin --generate-keys -L /etc/tripwire/rhel-centos-64-local.key -S /etc/tripwire/site.key -P <> -Q <>

@@ -1,4 +1,4 @@
-# rhel.rb: serverspec file for testing the default recipe
+# debian.rb: serverspec file for testing the debian recipe
 
 require 'spec_helper'
 

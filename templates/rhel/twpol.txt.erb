@@ -1,6 +1,6 @@
 #
 # CHEF MANAGED FILE: DO NOT EDIT
-# Controlling Cookbook: <%  @cookbook_name %>
+# Controlling Cookbook: <%=  @cookbook_name %>
 #
 # identifier:	tripwire IDS policy input file
 # host:		Fedora Core release 1 (Yarrow)
@@ -65,7 +65,6 @@ TWDB="/var/lib/tripwire";
 TWSKEY="/etc/tripwire";
 TWLKEY="/etc/tripwire";
 TWREPORT="/var/lib/tripwire/report";
-HOSTNAME=rhel-centos-64;
 
 @@section FS
 SEC_CRIT      = $(IgnoreNone)-SHa ;  # Critical files that cannot change
