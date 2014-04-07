@@ -7,19 +7,17 @@ Requirements
 This cookbook is tested and supported on:
 `debian`, `ubuntu` and `rhel/centos 6`
 
-- This cookbook does not support configuring the twpol file. It will use a default one unless you override the template location. i.e.:
+- This cookbook does not support configuring the twpol file. It will use a default one unless you override the template location.
 - Currently this cookbook only supports installing tripwire. Setting keys and initializing tripwire is out of scope.
-- Ubuntu/Debian are explicitly configured to not set up keys via a apt preseed file
+- Ubuntu/Debian are explicitly configured to not set up keys via a apt preseed file.
 
 ### cookbooks
 `rackspace_yum` to set up and install `epel` for centos/rhel
 
 Attributes
 ----------
-- default['rackspace_tripwire']['install_method'] = 'package'
-  + Install type. Currently only package is supported
-- default['rackspace_tripwire']['packages_list'] = %w[tripwire]
-  + A customizable list of packages to install along with tripwire itself
+- `default['rackspace_tripwire']['twpol']['templates_book']` - Tells the recipes which cookbook to locate the templates in. Default is this cookbook.
+- `default['rackspace_tripwire']['twcfg']['templates_book']` - Tells the recipes which cookbook to locate the templates in. Default is this cookbook.
 
 Usage
 -----
