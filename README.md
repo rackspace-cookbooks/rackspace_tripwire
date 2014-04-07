@@ -19,6 +19,13 @@ Attributes
 - `default['rackspace_tripwire']['twpol']['templates_book']` - Tells the recipes which cookbook to locate the templates in. Default is this cookbook.
 - `default['rackspace_tripwire']['twcfg']['templates_book']` - Tells the recipes which cookbook to locate the templates in. Default is this cookbook.
 
+Recipes
+-------
+
+- `default.rb` - decides which OS recipe to use for installation.
+- `rhel.rb` - Sets up epel and installs the tripwire package
+- `debian.rb` - Installs tripwire with a preseed file.
+
 Usage
 -----
 #### rackspace_tripwire::default
